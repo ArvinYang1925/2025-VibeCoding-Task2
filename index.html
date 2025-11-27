@@ -44,6 +44,8 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+      /* 確保在 320px 下不產生水平捲動 */
     }
 
     .page {
@@ -807,6 +809,9 @@
     .contact-item a {
       color: var(--color-text);
       text-decoration: none;
+      word-break: break-all;
+      /* 長網址在小螢幕斷行，避免水平捲動 */
+      overflow-wrap: anywhere;
     }
 
     .contact-item a:hover,
@@ -829,7 +834,7 @@
     /* CSS:CONTACT-END */
 
     /* CSS:RWD-START */
-    @media (min-width: 320px) {
+    @media (min-width: 480px) {
       .nav {
         padding: 0.9rem 0.25rem;
       }
